@@ -79,11 +79,7 @@ exports.createUser = (req, res) => {
     });
 };
 
-exports.updateUser = (req, res) => {   // This one is for like an administrator to update all of the user data
-    res.status(500).json({
-        status: "error",
-        message: "This route is not yet defined!"
-    });
-};
+// DO NOT update passwords with this!
+exports.updateUser = factory.updateOne(User);
 
 exports.deleteUser = factory.deleteOne(User);
